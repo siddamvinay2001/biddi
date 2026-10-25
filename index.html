@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bridget Theunissen | Coaching</title>
+<meta name="description" content="Personalised coaching from IRONMAN 70.3 pro Bridget Theunissen for fitness, running, cycling, marathons, 70.3 and IRONMAN. Plans in TrainingPeaks, unlimited WhatsApp support.">
+<link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="images/icon-512.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta property="og:image" content="images/icon-512.png">
+<meta name="theme-color" content="#f4f0e9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f4f0e9;
+    --paper: #fbf9f5;
+    --ink: #1d1c1a;
+    --muted: #716a60;
+    --line: #e3ddd2;
+    --olive: #2c3328;
+    --olive-2: #3a4335;
+    --clay: #c0603f;
+    --sand: #d9c9ae;
+    --wa: #25d366;
+    --green: #5f9a5a;
+    --amber: #d9a441;
+    --red: #c9573f;
+    --serif: "Instrument Serif", Georgia, serif;
+    --sans: Manrope, system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+  .serif { font-family: var(--serif); font-weight: 400; }
+  em { font-family: var(--serif); font-style: italic; font-weight: 400; }
+
+  /* Nav */
+  header { position: fixed; top: 14px; left: 0; right: 0; z-index: 30; }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; padding: 0 10px 0 22px; background: rgba(251,249,245,.8); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(0,0,0,.06); border-radius: 999px; }
+  .logo { font-family: var(--serif); font-size: 24px; text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
+  .logo i { color: var(--clay); }
+  .nav ul { display: flex; gap: 30px; list-style: none; }
+  .nav ul a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--muted); transition: color .2s; }
+  .nav ul a:hover { color: var(--ink); }
+  @media (max-width: 860px) { .nav ul { display: none; } }
+
+  /* Buttons */
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 26px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; transition: transform .2s, background .2s; white-space: nowrap; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-ink { background: var(--ink); color: var(--paper); }
+  .btn-ink:hover { background: #000; }
+  .btn-light { background: var(--paper); color: var(--ink); }
+  .btn-line { border: 1px solid rgba(0,0,0,.15); color: var(--ink); }
+  .btn-sm { padding: 10px 18px; font-size: 14px; }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--wa); box-shadow: 0 0 0 4px rgba(37,211,102,.2); }
+
+  /* Hero */
+  .hero { padding: 140px 0 70px; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
+  .tag { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 999px; background: var(--paper); border: 1px solid var(--line); margin-bottom: 28px; }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(52px, 8.5vw, 104px); line-height: .95; letter-spacing: -.025em; margin-bottom: 28px; }
+  h1 em { color: var(--clay); }
+  .lead { font-size: 18px; color: var(--muted); max-width: 500px; margin-bottom: 36px; }
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-card { position: relative; }
+  .arch { background: radial-gradient(120% 80% at 50% 0%, var(--olive-2), var(--olive)); border-radius: 32px; overflow: hidden; aspect-ratio: 3 / 4; padding-top: 6%; display: flex; align-items: flex-end; justify-content: center; }
+  .arch img { width: 100%; height: 100%; object-fit: contain; object-position: bottom; }
+  .float { position: absolute; background: var(--paper); border-radius: 18px; padding: 14px 18px; box-shadow: 0 18px 40px rgba(29,28,26,.14); font-size: 13px; }
+  .float b { display: block; font-size: 22px; font-family: var(--serif); font-weight: 400; line-height: 1.1; }
+  .float span { color: var(--muted); }
+  .f1 { left: -34px; bottom: 70px; }
+  .f2 { right: -20px; top: 70px; }
+  @media (max-width: 900px) {
+    .hero { padding-top: 120px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero-card { max-width: 420px; margin: 0 auto; width: 100%; }
+    .f1 { left: -8px; } .f2 { right: -8px; }
+  }
+
+  /* Marquee */
+  .marquee { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; padding: 20px 0; background: var(--paper); }
+  .track { display: flex; gap: 48px; width: max-content; animation: scroll 40s linear infinite; }
+  .track span { font-family: var(--serif); font-size: 26px; white-space: nowrap; color: var(--muted); }
+  .track span i { color: var(--clay); font-style: normal; margin-left: 48px; }
+  @keyframes scroll { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .track { animation: none; } }
+
+  /* Sections */
+  section { padding: 110px 0; }
+  .label { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--clay); margin-bottom: 18px; display: block; }
+  h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 5.5vw, 66px); line-height: 1; letter-spacing: -.02em; margin-bottom: 20px; }
+  .sub { color: var(--muted); font-size: 17px; max-width: 560px; }
+  .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 56px; flex-wrap: wrap; }
+
+  /* What I coach */
+  .what { padding-bottom: 0; }
+  .disc { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .disc a { display: block; text-decoration: none; padding: 34px 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .25s, color .25s; }
+  .disc a:hover { background: var(--olive); color: var(--paper); }
+  .disc a:hover p { color: #c9cbbf; }
+  .disc a:hover .n { color: var(--sand); }
+  .disc .n { font-size: 12px; font-weight: 700; letter-spacing: .12em; color: var(--clay); display: block; margin-bottom: 18px; }
+  .disc h3 { font-family: var(--serif); font-weight: 400; font-size: 36px; line-height: 1; margin-bottom: 10px; }
+  .disc p { color: var(--muted); font-size: 15px; transition: color .25s; }
+  @media (max-width: 900px) { .disc { grid-template-columns: 1fr 1fr; } .disc a { padding: 26px 20px; } .disc h3 { font-size: 28px; } }
+  @media (max-width: 560px) { .disc { grid-template-columns: 1fr; } }
+
+  /* Bento coaching */
+  .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+  .tile { background: var(--paper); border-radius: 24px; padding: 32px; border: 1px solid var(--line); display: flex; flex-direction: column; }
+  .tile h3 { font-size: 19px; font-weight: 700; letter-spacing: -.01em; margin-bottom: 10px; }
+  .tile p { color: var(--muted); font-size: 15px; }
+  .tile .ico { width: 44px; height: 44px; border-radius: 14px; background: var(--cream); display: grid; place-items: center; margin-bottom: 26px; }
+  .tile .ico svg { width: 22px; height: 22px; stroke: var(--ink); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .t-a { grid-column: span 4; background: var(--olive); color: var(--paper); border: 0; justify-content: space-between; min-height: 300px; }
+  .t-a p { color: #c9cbbf; max-width: 440px; }
+  .t-a h3 { font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 1.05; }
+  .t-a .ico { background: rgba(255,255,255,.1); }
+  .t-a .ico svg { stroke: var(--paper); }
+  .t-b { grid-column: span 2; background: var(--clay); color: #fff; border: 0; justify-content: flex-end; }
+  .t-b .big { font-family: var(--serif); font-size: 92px; line-height: .9; }
+  .t-b p { color: rgba(255,255,255,.85); }
+  .t-c { grid-column: span 2; }
+  @media (max-width: 900px) { .bento { grid-template-columns: 1fr; } .t-a, .t-b, .t-c { grid-column: auto; } .t-a { min-height: 0; } }
+
+  /* TrainingPeaks */
+  .tp { background: var(--olive); color: var(--paper); border-radius: 40px; margin: 0 12px; }
+  .tp .sub { color: #c9cbbf; }
+  .tp .label { color: var(--sand); }
+  .tp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .steps { list-style: none; margin-top: 40px; }
+  .steps li { display: grid; grid-template-columns: 44px 1fr; gap: 16px; padding: 20px 0; border-top: 1px solid rgba(255,255,255,.12); }
+  .steps li:last-child { border-bottom: 1px solid rgba(255,255,255,.12); }
+  .steps .n { font-family: var(--serif); font-size: 28px; color: var(--sand); line-height: 1; }
+  .steps b { display: block; font-size: 16px; margin-bottom: 4px; }
+  .steps p { color: #c9cbbf; font-size: 14.5px; }
+  .sync { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+  .sync span { font-size: 13px; padding: 7px 14px; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; color: #e7e4dc; }
+
+  /* Phone mock */
+  .phone-wrap { display: flex; justify-content: center; position: relative; }
+  .phone { width: 320px; max-width: 100%; background: #0f110e; border-radius: 46px; padding: 12px; box-shadow: 0 40px 80px rgba(0,0,0,.35); }
+  .screen { background: var(--paper); color: var(--ink); border-radius: 36px; overflow: hidden; padding: 18px 16px 20px; }
+  .notch { width: 96px; height: 24px; background: #0f110e; border-radius: 999px; margin: -4px auto 14px; }
+  .scr-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+  .scr-top b { font-size: 15px; }
+  .scr-top span { font-size: 11px; color: var(--muted); }
+  .day { display: grid; grid-template-columns: 36px 1fr; gap: 10px; align-items: stretch; margin-bottom: 8px; }
+  .day .d { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; padding-top: 8px; line-height: 1.2; text-align: center; }
+  .day .d b { display: block; font-size: 16px; color: var(--ink); }
+  .wo { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--line); border-radius: 12px; padding: 8px 10px; font-size: 12px; }
+  .wo b { display: block; font-size: 12.5px; }
+  .wo span { color: var(--muted); font-size: 11px; }
+  .g { border-left-color: var(--green); } .y { border-left-color: var(--amber); } .r { border-left-color: var(--red); } .p { border-left-color: #bdb7ac; background: var(--cream); }
+  .comment { margin-top: 10px; background: var(--olive); color: var(--paper); border-radius: 14px 14px 14px 4px; padding: 10px 12px; font-size: 11.5px; }
+  .comment b { color: var(--sand); font-size: 10.5px; display: block; margin-bottom: 2px; letter-spacing: .04em; text-transform: uppercase; }
+  .legend { display: flex; gap: 12px; justify-content: center; margin-top: 12px; font-size: 10px; color: var(--muted); }
+  .legend i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .live { position: absolute; right: 0; bottom: 60px; background: var(--paper); color: var(--ink); border-radius: 16px; padding: 12px 16px; font-size: 13px; box-shadow: 0 18px 40px rgba(0,0,0,.25); display: flex; align-items: center; gap: 10px; }
+  .caption { text-align: center; font-size: 12px; color: #9da093; margin-top: 18px; }
+  @media (max-width: 900px) { .tp { border-radius: 28px; margin: 0 8px; } .tp-grid { grid-template-columns: 1fr; gap: 56px; } .live { right: 4px; } }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+  .about-grid .text p { color: var(--muted); font-size: 17px; margin-bottom: 18px; }
+  .about-grid .text p:first-of-type { font-family: var(--serif); font-size: 30px; line-height: 1.2; color: var(--ink); }
+  .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .fact { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 22px; }
+  .fact b { font-family: var(--serif); font-weight: 400; font-size: 34px; line-height: 1.05; display: block; margin-bottom: 4px; }
+  .fact span { color: var(--muted); font-size: 13.5px; }
+  @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+  /* Results */
+  .results { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .race-list { border-top: 1px solid var(--line); }
+  .race { display: grid; grid-template-columns: 70px 1.6fr 1fr 1fr 1fr 110px; gap: 16px; align-items: center; padding: 22px 4px; border-bottom: 1px solid var(--line); transition: background .2s; }
+  .race:hover { background: var(--cream); }
+  .race .pl { font-family: var(--serif); font-size: 34px; line-height: 1; }
+  .race .pl.top { color: var(--clay); }
+  .race .nm b { display: block; font-size: 16px; }
+  .race .nm span { font-size: 13px; color: var(--muted); }
+  .race .sp { font-size: 14px; font-variant-numeric: tabular-nums; }
+  .race .sp small { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+  .race .tot { font-weight: 700; font-size: 17px; text-align: right; font-variant-numeric: tabular-nums; }
+  .src { font-size: 13px; color: var(--muted); margin-top: 18px; }
+  .more { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px; }
+  .more div { background: var(--cream); border-radius: 20px; padding: 24px; }
+  .more b { display: block; font-family: var(--serif); font-weight: 400; font-size: 26px; line-height: 1.1; margin-bottom: 6px; }
+  .more span { font-size: 14px; color: var(--muted); }
+  @media (max-width: 900px) {
+    .race { grid-template-columns: 56px 1fr auto; row-gap: 10px; }
+    .race .sp { display: none; }
+    .more { grid-template-columns: 1fr; }
+  }
+
+  /* Pricing */
+  .price { display: grid; grid-template-columns: 1.1fr .9fr; gap: 16px; }
+  .p-left { background: var(--paper); border: 1px solid var(--line); border-radius: 28px; padding: 44px; }
+  .p-right { background: var(--clay); color: #fff; border-radius: 28px; padding: 44px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; }
+  .p-right .big { font-family: var(--serif); font-size: clamp(56px, 7vw, 84px); line-height: .95; }
+  .p-right p { color: rgba(255,255,255,.88); }
+  .checks { list-style: none; columns: 2; column-gap: 32px; }
+  .checks li { break-inside: avoid; padding: 12px 0 12px 30px; position: relative; font-size: 15px; border-bottom: 1px solid var(--line); }
+  .checks li::before { content: ""; position: absolute; left: 0; top: 16px; width: 18px; height: 18px; border-radius: 50%; background: var(--olive) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/10px no-repeat; }
+  @media (max-width: 900px) { .price { grid-template-columns: 1fr; } .p-left, .p-right { padding: 30px; } .checks { columns: 1; } }
+
+  /* Contact */
+  .contact { text-align: center; padding-bottom: 80px; }
+  .contact h2 { font-size: clamp(54px, 9vw, 120px); line-height: .92; margin-bottom: 28px; }
+  .contact h2 em { color: var(--clay); }
+  .contact .sub { margin: 0 auto 36px; }
+  .num { display: block; font-family: var(--serif); font-size: 32px; margin-top: 28px; text-decoration: none; }
+  .contact small { color: var(--muted); }
+
+  /* Instagram */
+  .ig-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center; }
+  .ig-card { background: var(--paper); border: 1px solid var(--line); border-radius: 28px; padding: 36px; }
+  .ig-head { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+  .ig-av { width: 72px; height: 72px; border-radius: 50%; padding: 3px; background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7); flex: none; }
+  .ig-av img { width: 100%; height: 100%; border-radius: 50%; border: 3px solid var(--paper); object-fit: cover; }
+  .ig-head b { display: block; font-size: 18px; }
+  .ig-head span { color: var(--muted); font-size: 14px; }
+  .ig-card p { color: var(--muted); margin-bottom: 26px; }
+  .btn-ig { background: linear-gradient(45deg, #f9ce34, #ee2a7b 45%, #6228d7); color: #fff; }
+  .btn-ig svg { stroke: #fff; fill: none; stroke-width: 2; }
+  .ig-embed { display: flex; justify-content: center; }
+  .ig-embed .instagram-media { margin: 0 auto !important; max-width: 420px !important; width: 100% !important; border-radius: 20px !important; }
+  @media (max-width: 900px) { .ig-grid { grid-template-columns: 1fr; gap: 40px; } .ig-card { padding: 28px; } }
+
+  footer { padding: 28px 0 40px; font-size: 13px; color: var(--muted); }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 28px; }
+  footer a { color: var(--muted); }
+
+  .fab { position: fixed; right: 18px; bottom: 18px; width: 58px; height: 58px; border-radius: 50%; background: var(--wa); display: grid; place-items: center; box-shadow: 0 10px 28px rgba(0,0,0,.22); z-index: 40; transition: transform .2s; }
+  .fab:hover { transform: scale(1.06); }
+  .fab svg { width: 28px; height: 28px; }
+
+  /* Reveal on scroll */
+  .rv { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav class="nav">
+      <a href="#top" class="logo">Bridget <i>Theunissen</i></a>
+      <ul>
+        <li><a href="#what">What I coach</a></li>
+        <li><a href="#coaching">Coaching</a></li>
+        <li><a href="#trainingpeaks">TrainingPeaks</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#instagram">Instagram</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+      <a class="btn btn-ink btn-sm" href="https://wa.me/27625484816?text=Hi%20Bridget%2C%20I'm%20interested%20in%20coaching" target="_blank" rel="noopener">Get coached</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tag"><span class="dot"></span> Taking on new athletes</span>
+        <h1>Train with intent. <em>Race</em> with confidence.</h1>
+        <p class="lead">Personalised coaching from IRONMAN 70.3 pro Bridget Theunissen, whether you want to get fit, run a marathon or race an IRONMAN. Your plan in TrainingPeaks, and a coach on WhatsApp whenever you need her.</p>
+        <div class="cta-row">
+          <a class="btn btn-ink" href="https://wa.me/27625484816?text=Hi%20Bridget%2C%20I'm%20interested%20in%20coaching" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.5 13.5 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.8 17.8L.1 24l6.4-1.7a11.8 11.8 0 0 0 5.6 1.4A11.8 11.8 0 0 0 20.4 3.6z"/></svg>
+            Chat on WhatsApp
+          </a>
+          <a class="btn btn-line" href="#trainingpeaks">How it works</a>
+        </div>
+      </div>
+      <div class="hero-card rv">
+        <div class="arch">
+          <img src="images/portrait.png" alt="Bridget Theunissen in her South Africa race kit" width="600" height="800">
+        </div>
+        <div class="float f1"><b>24th</b><span>70.3 World Champs 2026</span></div>
+        <div class="float f2"><b>4:13:53</b><span>70.3 best, Krakow</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>70.3 World Championship Nice<i>&#10022;</i></span><span>70.3 Krakow<i>&#10022;</i></span><span>70.3 Aix-en-Provence<i>&#10022;</i></span><span>70.3 Knokke-Heist<i>&#10022;</i></span><span>70.3 Mossel Bay<i>&#10022;</i></span><span>SA Cross Tri Champion<i>&#10022;</i></span><span>Africa Triathlon Cup<i>&#10022;</i></span>
+      <span>70.3 World Championship Nice<i>&#10022;</i></span><span>70.3 Krakow<i>&#10022;</i></span><span>70.3 Aix-en-Provence<i>&#10022;</i></span><span>70.3 Knokke-Heist<i>&#10022;</i></span><span>70.3 Mossel Bay<i>&#10022;</i></span><span>SA Cross Tri Champion<i>&#10022;</i></span><span>Africa Triathlon Cup<i>&#10022;</i></span>
+    </div>
+  </div>
+
+  <section id="what" class="what">
+    <div class="wrap">
+      <div class="head rv">
+        <div>
+          <span class="label">What I coach</span>
+          <h2>Whatever your goal, <em>let's get you there.</em></h2>
+        </div>
+        <p class="sub">Every athlete gets the same personal plan, TrainingPeaks setup and unlimited WhatsApp support, whatever the goal.</p>
+      </div>
+      <div class="disc rv">
+        <a href="https://wa.me/27625484816?text=Hi%20Bridget%2C%20I'm%20interested%20in%20get%20fit%20coaching" target="_blank" rel="noopener"><span class="n">01</span><h3>Get fit</h3><p>Never trained before or getting back into it? A simple, realistic plan to build fitness and habits that last.</p></a>
+        <a href="https://wa.me/27625484816?text=Hi%20Bridget%2C%20I'm%20interested%20in%20running%20coaching" target="_blank" rel="noopener"><span class="n">02</span><h3>Running</h3><p>From your first 5K to a faster 10K or half marathon. Structured run training that keeps you healthy.</p></a>
+        <a href="https://wa.me/27625484816?text=Hi%20Bridget%2C%20I'm%20interested%20in%20marathon%20training%20coaching" target="_blank" rel="noopener"><span class="n">03</span><h3>Marathons</h3><p>Build the endurance, pacing and fuelling to finish strong or chase a new marathon PB.</p></a>
+        <a href="https://wa.me/27625484816?text=Hi%20Bridget%2C%20I'm%20interested%20in%20cycling%20coaching" target="_blank" rel="noopener"><span class="n">04</span><h3>Cycling</h3><p>Get stronger on the bike with power or heart-rate based sessions, indoors or out.</p></a>
+        <a href="https://wa.me/27625484816?text=Hi%20Bridget%2C%20I'm%20interested%20in%2070.3%20training%20coaching" target="_blank" rel="noopener"><span class="n">05</span><h3>IRONMAN 70.3</h3><p>Swim, bike and run balanced for the half distance, from sprint and Olympic tris up to 70.3.</p></a>
+        <a href="https://wa.me/27625484816?text=Hi%20Bridget%2C%20I'm%20interested%20in%20IRONMAN%20training%20coaching" target="_blank" rel="noopener"><span class="n">06</span><h3>Full IRONMAN</h3><p>The big one. Long-course volume, nutrition and race-day strategy to get you to the finish line.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="coaching">
+    <div class="wrap">
+      <div class="head rv">
+        <div>
+          <span class="label">The coaching</span>
+          <h2>Built for you.<br><em>Not a template.</em></h2>
+        </div>
+        <p class="sub">From your first 5K to your first IRONMAN. A coach who races at the top level, writes every session herself and actually answers your messages.</p>
+      </div>
+      <div class="bento">
+        <div class="tile t-a rv">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+          <div>
+            <h3>A plan written around your life.</h3>
+            <p>Swim, bike, run and strength built from your schedule, experience and race goals. Work trip, sick kid, bad sleep? The week gets adjusted, not abandoned.</p>
+          </div>
+        </div>
+        <div class="tile t-b rv">
+          <div class="big">&infin;</div>
+          <h3>Unlimited WhatsApp</h3>
+          <p>No message caps. No monthly check-in. Just ask.</p>
+        </div>
+        <div class="tile t-c rv">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div>
+          <h3>Live workout feedback</h3>
+          <p>Every completed session syncs to TrainingPeaks and gets reviewed, so your plan responds to how you're actually going.</p>
+        </div>
+        <div class="tile t-c rv">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>No BS, honest coaching</h3>
+          <p>Straight talk on what's working and what isn't. Clear targets and sessions you can actually stick to.</p>
+        </div>
+        <div class="tile t-c rv">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 21V4"/><path d="M4 4h12l-2 4 2 4H4"/></svg></div>
+          <h3>Race-day ready</h3>
+          <p>Pacing, fuelling, transitions and taper. The details I use as a pro, passed on to you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="trainingpeaks" class="tp">
+    <div class="wrap tp-grid">
+      <div class="rv">
+        <span class="label">Powered by TrainingPeaks</span>
+        <h2>Your training, <em>live</em> in your pocket.</h2>
+        <p class="sub">Every session lives in the TrainingPeaks app with exact targets. Train, sync, and I see it. Here's how a week works.</p>
+        <ul class="steps">
+          <li><span class="n">1</span><div><b>Your week lands in TrainingPeaks</b><p>Structured workouts with clear targets for pace, power, heart rate and swim intervals, scheduled on your calendar.</p></div></li>
+          <li><span class="n">2</span><div><b>Workouts sync to your watch</b><p>Sessions push straight to your Garmin, COROS, Wahoo, Suunto or Apple Watch, or to Zwift for indoor rides. Just press start.</p></div></li>
+          <li><span class="n">3</span><div><b>Completed data uploads automatically</b><p>Finish the session and it syncs back. Each workout is colour-coded green, yellow or red to show how closely it matched the plan.</p></div></li>
+          <li><span class="n">4</span><div><b>I review it and reply</b><p>Comments on your workouts, plus a WhatsApp if something needs a chat. The plan is adjusted live, not at the end of the month.</p></div></li>
+          <li><span class="n">5</span><div><b>Track your fitness over time</b><p>Training load, fitness and fatigue trends show you're building toward race day, and help time your taper perfectly.</p></div></li>
+        </ul>
+        <div class="sync"><span>Garmin</span><span>COROS</span><span>Wahoo</span><span>Suunto</span><span>Apple Watch</span><span>Zwift</span><span>Strava</span></div>
+      </div>
+      <div class="rv">
+        <div class="phone-wrap">
+          <div class="phone">
+            <div class="screen">
+              <div class="notch"></div>
+              <div class="scr-top"><b>This week</b><span>Build phase · Wk 6</span></div>
+              <div class="day"><div class="d">Mon<b>14</b></div><div class="wo g"><b>Swim · 3 x 400m threshold</b><span>2.6 km · 52 min · completed</span></div></div>
+              <div class="day"><div class="d">Tue<b>15</b></div><div class="wo g"><b>Bike · 4 x 8 min @ FTP</b><span>1h 20m · 212 W NP · completed</span></div></div>
+              <div class="day"><div class="d">Wed<b>16</b></div><div class="wo y"><b>Run · Tempo 3 x 10 min</b><span>11.2 km · 58 min · slightly short</span></div></div>
+              <div class="day"><div class="d">Thu<b>17</b></div><div class="wo p"><b>Rest + mobility</b><span>20 min</span></div></div>
+              <div class="day"><div class="d">Sat<b>19</b></div><div class="wo"><b>Brick · 2h ride + 20 min run</b><span>Planned · Z2 then race pace</span></div></div>
+              <div class="comment"><b>Coach Bridget</b>Great swim! Tempo felt hard because of the heat, so I've moved Saturday's run off the bike to the morning.</div>
+              <div class="legend"><span><i style="background:var(--green)"></i>On plan</span><span><i style="background:var(--amber)"></i>Close</span><span><i style="background:var(--red)"></i>Missed</span></div>
+            </div>
+          </div>
+          <div class="live"><span class="dot"></span> Workout synced · 2 min ago</div>
+        </div>
+        <p class="caption">Example week, for illustration</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="text rv">
+        <span class="label">About Bridget</span>
+        <p>I'm a professional triathlete from South Africa, racing the IRONMAN Pro Series.</p>
+        <p>I started in short-course racing, competing for South Africa on the World Triathlon circuit and on Africa Triathlon Cup podiums, before moving up to the 70.3 distance.</p>
+        <p>In 2026 I raced the IRONMAN 70.3 World Championship in Nice, finished 4th at IRONMAN 70.3 Krakow and won the South African Cross Triathlon Championship.</p>
+        <p>I know what it takes to balance hard training with real life, and I coach the way I'd want to be coached: personal, honest and always reachable.</p>
+        <a class="btn btn-ig" href="https://www.instagram.com/biddi_theunissen/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="#fff"/></svg> Follow @biddi_theunissen</a>
+      </div>
+      <div class="facts rv">
+        <div class="fact"><b>56th</b><span>2026 IRONMAN Pro Series, 3,085 pts</span></div>
+        <div class="fact"><b>24th</b><span>IRONMAN 70.3 World Championship 2026</span></div>
+        <div class="fact"><b>2</b><span>IRONMAN 70.3 podiums</span></div>
+        <div class="fact"><b>1st</b><span>SA Cross Triathlon Championship 2026</span></div>
+        <div class="fact"><b>RSA</b><span>South Africa</span></div>
+        <div class="fact"><b>25</b><span>Years old</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="results" class="results">
+    <div class="wrap">
+      <div class="head rv">
+        <div>
+          <span class="label">Race record</span>
+          <h2>Results that <em>speak.</em></h2>
+        </div>
+        <p class="sub">Official IRONMAN 70.3 results as a professional.</p>
+      </div>
+      <div class="race-list rv">
+        <div class="race"><div class="pl">24th</div><div class="nm"><b>70.3 World Championship</b><span>Nice · 12 Sep 2026</span></div><div class="sp"><small>Swim</small>0:28:44</div><div class="sp"><small>Bike</small>2:46:50</div><div class="sp"><small>Run</small>1:21:45</div><div class="tot">4:40:58</div></div>
+        <div class="race"><div class="pl">4th</div><div class="nm"><b>IRONMAN 70.3 Krakow</b><span>Poland · 2 Aug 2026</span></div><div class="sp"><small>Swim</small>0:24:49</div><div class="sp"><small>Bike</small>2:19:27</div><div class="sp"><small>Run</small>1:24:19</div><div class="tot">4:13:53</div></div>
+        <div class="race"><div class="pl">13th</div><div class="nm"><b>IRONMAN 70.3 Aix-en-Provence</b><span>France · 17 May 2026</span></div><div class="sp"><small>Swim</small>0:25:49</div><div class="sp"><small>Bike</small>2:30:36</div><div class="sp"><small>Run</small>1:25:47</div><div class="tot">4:27:08</div></div>
+        <div class="race"><div class="pl">30th</div><div class="nm"><b>70.3 World Championship</b><span>8 Nov 2025</span></div><div class="sp"><small>Swim</small>0:29:05</div><div class="sp"><small>Bike</small>2:46:59</div><div class="sp"><small>Run</small>1:26:59</div><div class="tot">4:46:25</div></div>
+        <div class="race"><div class="pl top">3rd</div><div class="nm"><b>IRONMAN 70.3 Knokke-Heist</b><span>Belgium · 7 Sep 2025</span></div><div class="sp"><small>Swim</small>0:24:59</div><div class="sp"><small>Bike</small>2:19:38</div><div class="sp"><small>Run</small>1:28:13</div><div class="tot">4:18:05</div></div>
+        <div class="race"><div class="pl top">3rd</div><div class="nm"><b>IRONMAN 70.3 Mossel Bay</b><span>South Africa · 17 Nov 2024</span></div><div class="sp"><small>Swim</small>0:30:31</div><div class="sp"><small>Bike</small>2:50:27</div><div class="sp"><small>Run</small>1:34:02</div><div class="tot">4:59:21</div></div>
+        <div class="race"><div class="pl">DNF</div><div class="nm"><b>IRONMAN 70.3 Italy Emilia Romagna</b><span>Italy · 20 Sep 2026</span></div><div class="sp"><small>Swim</small>0:27:49</div><div class="sp"><small>Bike</small>-</div><div class="sp"><small>Run</small>-</div><div class="tot">-</div></div>
+      </div>
+      <p class="src">Source: <a href="https://www.ironman.com/proseries/triathletes/bridget-theunissen" target="_blank" rel="noopener">IRONMAN Pro Series athlete profile</a></p>
+
+      <div class="more rv">
+        <div><b>1st · SA Cross Triathlon Champs</b><span>Auto&amp;General Xtri, Steyn City, 2026 · 2:12:12</span></div>
+        <div><b>2nd · Africa Cup Swakopmund</b><span>Namibia, 2025 · 1:05:13</span></div>
+        <div><b>2nd · Africa Cup Maselspoort</b><span>Free State, 2022 · 1:08:34</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="instagram">
+    <div class="wrap ig-grid">
+      <div class="rv">
+        <span class="label">Instagram</span>
+        <h2>Follow the <em>journey.</em></h2>
+        <p class="sub" style="margin-bottom:32px">Race days, training sessions and life as a pro triathlete. See what goes into the work behind the results.</p>
+        <div class="ig-card">
+          <div class="ig-head">
+            <div class="ig-av"><img src="images/icon-512.png" alt="Bridget Theunissen"></div>
+            <div><b>@biddi_theunissen</b><span>Bridget Theunissen · Pro triathlete</span></div>
+          </div>
+          <p>Training tips, race updates and a look behind the scenes. Follow along and say hi.</p>
+          <a class="btn btn-ig" href="https://www.instagram.com/biddi_theunissen/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="#fff"/></svg> Follow on Instagram</a>
+        </div>
+      </div>
+      <div class="ig-embed rv">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DdMfEYXCs9W/" data-instgrm-version="14" style="background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;">
+          <a href="https://www.instagram.com/p/DdMfEYXCs9W/" target="_blank" rel="noopener">24th at 70.3 World Champs. View this post on Instagram</a>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <div class="head rv">
+        <div>
+          <span class="label">Pricing</span>
+          <h2>One package. <em>Everything in.</em></h2>
+        </div>
+        <p class="sub">Simple, affordable coaching with no tiers to compare. Rates depend on your goals, so send a message and I'll share the details.</p>
+      </div>
+      <div class="price rv">
+        <div class="p-left">
+          <ul class="checks">
+            <li>Personalised plan, updated weekly</li>
+            <li>Unlimited WhatsApp messages</li>
+            <li>All sessions in TrainingPeaks</li>
+            <li>Workouts synced to your watch</li>
+            <li>Feedback on completed workouts</li>
+            <li>Swim, bike, run and strength</li>
+            <li>Race strategy, pacing and fuelling</li>
+            <li>No lock-in, no hidden extras</li>
+          </ul>
+        </div>
+        <div class="p-right">
+          <div class="big">Affordable.<br><em>Honestly.</em></div>
+          <div>
+            <p style="margin-bottom:22px">Tell me about your goal race and I'll get back to you personally with current rates.</p>
+            <a class="btn btn-light" href="https://wa.me/27625484816?text=Hi%20Bridget%2C%20could%20you%20send%20me%20your%20coaching%20prices%3F" target="_blank" rel="noopener">Ask for pricing</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap rv">
+      <span class="label">Let's go</span>
+      <h2>Your next race<br>starts <em>here.</em></h2>
+      <p class="sub">Send me a WhatsApp with your goal race, your current training and how many hours a week you have. I'll take it from there.</p>
+      <a class="btn btn-ink" href="https://wa.me/27625484816?text=Hi%20Bridget%2C%20I'm%20interested%20in%20coaching" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.5 13.5 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.8 17.8L.1 24l6.4-1.7a11.8 11.8 0 0 0 5.6 1.4A11.8 11.8 0 0 0 20.4 3.6z"/></svg>
+        Message Bridget on WhatsApp
+      </a>
+      <a class="num" href="https://wa.me/27625484816" target="_blank" rel="noopener">+27 62 548 4816</a>
+      <small>WhatsApp only. I usually reply the same day.</small>
+      <p style="margin-top:18px"><a href="https://www.instagram.com/biddi_theunissen/" target="_blank" rel="noopener" style="color:var(--clay);font-weight:600">Follow @biddi_theunissen on Instagram</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Bridget Theunissen Coaching</span>
+    <span><a href="https://www.instagram.com/biddi_theunissen/" target="_blank" rel="noopener">Instagram</a> &middot; <a href="https://wa.me/27625484816" target="_blank" rel="noopener">WhatsApp</a></span>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/27625484816?text=Hi%20Bridget%2C%20I'm%20interested%20in%20coaching" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.5 13.5 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.8 17.8L.1 24l6.4-1.7a11.8 11.8 0 0 0 5.6 1.4A11.8 11.8 0 0 0 20.4 3.6z"/></svg>
+</a>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('.rv');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
+<script async src="https://www.instagram.com/embed.js"></script>
+</body>
+</html>
